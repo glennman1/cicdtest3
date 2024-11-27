@@ -24,7 +24,7 @@ jobs:
           distribution: 'temurin' # java 배포판 설정
 
       - name: application.yml 생성하기
-        run:
+        run: |
           mkdir -p src/main/resources
           echo "${{ secrets.APPLICATION.YML }}" > src/main/resources/application.yml
 
