@@ -50,7 +50,7 @@ jobs:
           script_stop: true
           script: |
             # 도커허브에 토큰으로 로그인
-            echo "${{ secrets.EC2_PRIVATE_KEY }}" | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+            echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
             # 이미지 풀
             docker pull ${{ secrets.DOCKER_USER }}/web-app:latest
             docker stop web-app || true
