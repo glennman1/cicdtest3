@@ -25,6 +25,7 @@ jobs:
 
       - name: application.yml 생성하기
         run:
+          mkdir -p src/main/resources
           echo "${{ secrets.APPLICATION.YML }}" > src/main/resources/application.yml
 
       - name: application build # gradle 빌드
